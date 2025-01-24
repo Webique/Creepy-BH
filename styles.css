@@ -1,0 +1,512 @@
+/* ===========================================================
+   General Reset and Base Styles
+   =========================================================== */
+   body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Modern font for professionalism */
+    box-sizing: border-box;
+    background-color: #ffb88e; /* Main theme color */
+    color: #ffffff; /* White text for readability */
+}
+
+/* ===========================================================
+   Navbar Styling
+   =========================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffb88e; /* Main theme color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Navbar when scrolled */
+.navbar.scrolled {
+    background-color: rgba(255, 184, 142, 0.9); /* Slightly transparent theme color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger shadow on scroll */
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced space between the logo image and brand name */
+    font-size: 1.8rem; /* Slightly smaller font */
+    font-weight: 800; /* Extra-bold font for prominence */
+    color: #ffffff; /* Clean white for the text */
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Balanced letter spacing */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo span {
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    font-weight: 800; /* Extra-bold for emphasis */
+    color: #ffffff; /* White text for contrast */
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover span {
+    color: #ffffff; /* White on hover */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Slightly deeper shadow */
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+.logo-image {
+    height: 40px; /* Slightly smaller logo image */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Menu Styling */
+.menu {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    gap: 30px;
+    background-color: transparent;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff; /* White for links */
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+    color: #ffb88e; /* Main theme color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background highlight */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden on larger screens */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 1300;
+}
+
+/* Mobile Navbar Styling */
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffb88e;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-50px);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .menu.active {
+        transform: translateY(0); /* Slide down into view */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu a {
+        font-size: 1.3rem; /* Slightly larger font for mobile */
+        font-weight: 800; /* Extra-bold for mobile emphasis */
+        padding: 12px 20px;
+        text-align: center; /* Center-align text */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu on mobile */
+    }
+}
+
+/* ===========================================================
+   Hero Section with Video Background
+   =========================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: 0;
+}
+
+.hero-section .content {
+    position: relative;
+    z-index: 2; /* Places the text above the video */
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif; /* Modern and clean font */
+    font-size: 3rem; /* Slightly smaller size */
+    font-weight: 800; /* Extra bold for prominence */
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px; /* Slightly spaced out for elegance */
+    margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+    color: #ffffff; /* White highlight */
+    text-shadow: 3px 3px 15px rgba(255, 184, 142, 0.6); /* Soft glow */
+}
+
+.hero-section p {
+    font-family: 'Roboto', sans-serif; /* Clean secondary font */
+    font-size: 1.2rem; /* Adjusted size */
+    color: #ffffff;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 12px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffb88e;
+    background: #ffffff;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+    background: #ffb88e;
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.4rem; /* Smaller title for mobile */
+        letter-spacing: 1px; /* Reduced spacing */
+    }
+
+    .hero-section p {
+        font-size: 1rem; /* Smaller text */
+    }
+
+    .hero-button {
+        padding: 10px 30px; /* Adjusted padding for smaller screens */
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+}
+
+/* ===========================================================
+   Concept Section
+   =========================================================== */
+   .concept-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #ffffff; /* Clean white background */
+    gap: 20px;
+}
+
+.concept-content {
+    flex: 1;
+    max-width: 600px;
+    background-color: #ffffff; /* White background for content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+.concept-content h2 {
+    font-size: 1.5rem;
+    color: #333; /* Dark gray for contrast */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ffb88e; /* Accent underline */
+    padding-bottom: 5px;
+}
+
+.concept-content h3 {
+    font-size: 2rem;
+    color: #000; /* Bold black for emphasis */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.concept-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555; /* Neutral gray for readability */
+    margin-bottom: 20px;
+}
+
+.concept-link {
+    font-size: 1rem;
+    color: #ffb88e; /* Accent color for links */
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #ffb88e; /* Border for emphasis */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.concept-link:hover {
+    background-color: #ffb88e; /* Accent background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.concept-images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.concept-images img {
+    width: calc(50% - 10px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-images img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .concept-section {
+        flex-direction: column;
+    }
+
+    .concept-images img {
+        width: 100%;
+    }
+}
+
+
+/* ===========================================================
+   Location Section
+   =========================================================== */
+   .location-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Clean white background */
+    color: #333; /* Neutral text color */
+}
+
+.location-section h2 {
+    font-size: 2rem;
+    margin-top: -45px;
+    margin-bottom: 20px;
+    color: #ffb88e; /* Accent color for the heading */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ffb88e; /* Underline for emphasis */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.location-section p {
+    font-size: 1.1rem;
+    color: #555; /* Subtle text color for description */
+    margin-bottom: 30px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the map on the page */
+    border: 1px solid #ddd; /* Subtle border for the map */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+    border: none; /* Remove iframe border */
+}
+
+
+/* ===========================================================
+   Footer Styling
+   =========================================================== */
+   .footer {
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* White text for contrast */
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    border-top: 1px solid #333; /* Thin border for definition */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-details,
+.footer-social,
+.footer-jobs {
+    flex: 1 1 calc(33% - 20px); /* Each section takes 33% of the width */
+    min-width: 250px;
+}
+
+.footer-details h3,
+.footer-social h3,
+.footer-jobs h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffffff; /* White for headings */
+    border-bottom: 2px solid #ffb88e; /* Accent underline for separation */
+    padding-bottom: 10px;
+}
+
+.footer-details p,
+.footer-jobs p {
+    font-size: 1rem;
+    color: #ffffff; /* White for text */
+    line-height: 1.6;
+}
+
+.footer-details a,
+.footer-jobs a {
+    color: #ffb88e; /* Primary accent color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-details a:hover,
+.footer-jobs a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 1.75rem;
+    color: #ffb88e; /* Accent color for icons */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffffff; /* White on hover */
+    transform: scale(1.1);
+}
+
+/* Job Link Styling */
+.job-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #333; /* Darker background for the button */
+    color: #ffffff; /* White text for the button */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.job-link:hover {
+    background-color: #ffb88e; /* Accent hover */
+    color: #1a1a1a; /* Dark text for contrast on hover */
+    transform: scale(1.05);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #cccccc; /* Subtle gray */
+    border-top: 1px solid #333; /* Thin top border */
+    padding-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-details,
+    .footer-social,
+    .footer-jobs {
+        flex: 1 1 100%;
+        text-align: center; /* Center align on mobile */
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

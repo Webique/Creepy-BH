@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creepy</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.jpg" alt="Creepy Logo" class="logo-image"> <!-- Logo -->
+                <span>Creepy</span>
+            </a>
+        </div>
+        <span class="menu-toggle">&#9776;</span> <!-- Toggler -->
+        <nav class="menu">
+            <a href="branches.html" class="nav-link">Our Branches</a> <!-- Link to Branches Page -->
+            <a href="FAQ.html" class="nav-link">FAQs</a> <!-- Link to FAQ Page -->
+            <a href="#footer" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+    
+
+<!-- Hero Section -->
+<section class="hero-section hidden">
+    <video class="background-video" autoplay muted loop playsinline>
+        <source src="assets/backgroundvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <h1 class="hero-title">Welcome to <span class="highlight">Creepy</span></h1>
+
+        <button class="hero-button" id="menuButton">Explore Menu</button>
+    </div>
+</section>
+
+<!-- Concept Section -->
+<section class="concept-section hidden">
+    <div class="concept-content">
+      <h2>The Concept</h2>
+      <h3>A Haven of Cookies and Coffee.</h3>
+      <p>
+        In a quaint corner of the bustling town, nestled between cobblestone streets and cozy cafes, stood "Creepy" – a haven for cookie aficionados and coffee connoisseurs alike. The aroma of freshly baked goods wafted through the air, enticing passersby to step inside and indulge in its delights. Shelves lined with jars of homemade cookies in every flavor imaginable greeted customers, from classic chocolate chip to exotic matcha green tea, offering a treat for every palate.
+      </p>
+      <a href="branches.html" class="concept-link">Our Branches &rarr;</a>
+  
+      <h3>Where Memories Are Made.</h3>
+      <p>
+        As the espresso machine hummed in the background, baristas expertly crafted rich brews to complement each sweet treat. "Creepy" wasn't just a shop; it was a sanctuary where friends gathered, lovers lingered, and memories were made over cookies and coffee. Amidst the laughter and chatter, the scent of freshly baked goods lingered, drawing in new patrons eager to experience the cozy magic of "Creepy" for themselves.
+
+
+
+
+
+
+
+
+      </p>
+      <a href="FAQ.html" class="concept-link">FAQs &rarr;</a>
+    </div>
+    <div class="concept-images">
+      <img src="assets/pic1.jpg" alt="image 1">
+      <img src="assets/pic2.jpg" alt="image 2">
+    </div>
+</section>
+
+<!-- Location Section -->
+<section class="location-section">
+    <h2>Our Location</h2>
+    <p>Visit us in the heart of the city! We're nestled in a cozy spot where you can enjoy the perfect mix of cookies, coffee, and ambiance.</p>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps?q=26.1305556,50.5429444&output=embed" 
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            style="border:0" 
+            allowfullscreen 
+            aria-hidden="false" 
+            tabindex="0">
+        </iframe>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="footer-container">
+        <!-- Contact Section -->
+        <div class="footer-details">
+            <h3>Contact Us</h3>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:creepy_cafe@hotmail.com">creepy_cafe@hotmail.com</a>
+            </p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/creepy_bh" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@creepy_bh" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Creepy. All Rights Reserved.</p>
+    </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
